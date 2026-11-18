@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radiological Methods in the Musculoskeletal System</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+    .slide-active { display: flex !important; }
+    .slide-inactive { display: none !important; }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #0ea5e9; }
+  </style>
+</head>
+<body class="bg-[#070b14] text-slate-100 min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-white p-2 sm:p-4">
+
+  <!-- Top App Bar / Presentation Header -->
+  <header class="w-full max-w-7xl mx-auto flex items-center justify-between bg-slate-900/90 backdrop-blur border border-slate-800 rounded-xl px-4 py-3 mb-3 shadow-lg">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-cyan-600 to-sky-400 flex items-center justify-center font-bold text-white shadow-md shadow-cyan-500/20">
+        ☢
+      </div>
+      <div>
+        <h1 class="text-sm sm:text-base font-bold text-white leading-tight">Musculoskeletal Radiology</h1>
+        <p class="text-xs text-slate-400">Academic Research & Clinical Imaging Methods</p>
+      </div>
+    </div>
+
+    <!-- Center Progress Indicator -->
+    <div class="hidden md:flex items-center gap-3 bg-slate-950/70 border border-slate-800 rounded-full px-4 py-1.5">
+      <span class="text-xs font-semibold text-cyan-400 font-mono" id="slide-readout">Slide 1 of 14</span>
+      <div class="w-32 bg-slate-800 h-2 rounded-full overflow-hidden">
+        <div id="progress-bar" class="bg-gradient-to-r from-cyan-500 to-teal-400 h-full w-[7.14%] transition-all duration-300"></div>
+      </div>
+    </div>
+
+    <!-- Right Controls -->
+    <div class="flex items-center gap-2">
+      <button onclick="toggleGrid()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 hover:text-white transition flex items-center gap-1.5 border border-slate-700">
+        <span>⊞</span>
+        <span class="hidden sm:inline">Overview</span>
+      </button>
+      <a href="Musculoskeletal_Radiological_Methods.pptx" download class="px-3 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-xs font-bold text-white transition flex items-center gap-1.5 shadow-md shadow-cyan-600/30">
+        <span>📥</span>
+        <span class="hidden sm:inline">Download PPTX</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Slide Stage Container (16:9 Aspect Ratio) -->
+  <main class="w-full max-w-7xl mx-auto flex-1 flex flex-col justify-center">
+    <div class="w-full bg-slate-900/95 border border-slate-800 rounded-2xl shadow-2xl relative overflow-hidden flex flex-col min-h-[580px] lg:min-h-[640px] p-6 lg:p-8">
+
+      <!-- ================= SLIDE 1: TITLE SLIDE ================= -->
+      <section id="slide-1" class="slide-active flex-col justify-center items-center text-center my-auto py-8">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-xs font-semibold tracking-wider uppercase mb-6 shadow-inner">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+          Academic Research • Medical Imaging
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mb-4">
+          Radiological Methods Used in the <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-sky-400 bg-clip-text text-transparent">Musculoskeletal System</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+          Comprehensive Clinical Assessment of Diagnostic Imaging Modalities, Indications, Advantages, Radiation Safety & Modality Selection.
+        </p>
+
+        <!-- Modalities Pill Row -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 w-full max-w-5xl">
+          <div class="bg-slate-950/80 border border-slate-800 hover:border-cyan-500/50 p-3 rounded-xl text-center transition">
+            <span class="text-xl block mb-1">🦴</span>
+            <span class="text-xs font-bold text-white block">X-ray</span>
+            <span class="text-[10px] text-cyan-400 font-mono">Bones & Trauma</span>
+          </div>
+          <div class="bg-slate-950/80 border border-slate-800 hover:border-cyan-500/50 p-3 rounded-xl text-center transition">
+            <span class="text-xl block mb-1">🌀</span>
+            <span class="text-xs font-bold text-white block">CT Scan</span>
+            <span class="text-[10px] text-cyan-400 font-mono">3D & Complex</span>
+          </div>
+          <div class="bg-slate-950/80 border border-slate-800 hover:border-cyan-500/50 p-3 rounded-xl text-center transition">
+            <span class="text-xl block mb-1">🧲</span>
+            <span class="text-xs font-bold text-white block">MRI</span>
+            <span class="text-[10px] text-emerald-400 font-mono">Soft Tissues</span>
+          </div>
+          <div class="bg-slate-950/80 border border-slate-800 hover:border-cyan-500/50 p-3 rounded-xl text-center transition">
+            <span class="text-xl block mb-1">🔊</span>
+            <span class="text-xs font-bold text-white block">Ultrasound</span>
+            <span class="text-[10px] text-emerald-400 font-mono">Real-Time & Tendons</span>
+          </div>
+          <div class="bg-slate-950/80 border border-slate-800 hover:border-cyan-500/50 p-3 rounded-xl text-center transition">
+            <span class="text-xl block mb-1">☢️</span>
+            <span class="text-xs font-bold text-white block">Bone Scan</span>
+            <span class="text-[10px] text-amber-400 font-mono">Metabolism</span>
+          </div>
+          <div class="bg-slate-950/80 border border-slate-800 hover:border-cyan-500/50 p-3 rounded-xl text-center transition">
+            <span class="text-xl block mb-1">🎥</span>
+            <span class="text-xs font-bold text-white block">Fluoroscopy</span>
+            <span class="text-[10px] text-amber-400 font-mono">Dynamic / Surgery</span>
+          </div>
+          <div class="bg-slate-950/80 border border-slate-800 hover:border-cyan-500/50 p-3 rounded-xl text-center transition">
+            <span class="text-xl block mb-1">📊</span>
+            <span class="text-xs font-bold text-white block">DEXA</span>
+            <span class="text-[10px] text-teal-400 font-mono">Bone Density</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 2: INTRODUCTION ================= -->
+      <section id="slide-2" class="slide-inactive flex-col justify-between h-full">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-6">
+          <div>
+            <span class="text-xs font-bold tracking-wider uppercase text-cyan-400">FOUNDATIONS • MSK RADIOLOGY</span>
+            <h3 class="text-2xl font-bold text-white">1. Introduction to the Musculoskeletal System</h3>
+          </div>
+          <span class="px-3 py-1 bg-cyan-950/80 text-cyan-300 border border-cyan-800 rounded-full text-xs font-semibold">Anatomy & Role</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
+          <!-- Left: Anatomy Box -->
+          <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="text-base font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                Anatomical Structure & Physiology
+              </h4>
+              <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                The musculoskeletal system provides mechanical support, vital organ protection, stability, and locomotion. It comprises:
+              </p>
+              <ul class="space-y-2.5 text-xs sm:text-sm">
+                <li class="flex items-start gap-2 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                  <span class="text-cyan-400 font-bold">🦴 Bones:</span>
+                  <span class="text-slate-300">Rigid structural framework, hematopoiesis, and mineral reservoir.</span>
+                </li>
+                <li class="flex items-start gap-2 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                  <span class="text-cyan-400 font-bold">⚙️ Articular Joints:</span>
+                  <span class="text-slate-300">Junctions between bones providing degree of freedom and stability.</span>
+                </li>
+                <li class="flex items-start gap-2 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                  <span class="text-cyan-400 font-bold">💪 Muscles & Tendons:</span>
+                  <span class="text-slate-300">Contractile motor units and collagenous anchors transmitting force.</span>
+                </li>
+                <li class="flex items-start gap-2 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                  <span class="text-cyan-400 font-bold">🔗 Ligaments & Cartilage:</span>
+                  <span class="text-slate-300">Stabilizing fibrous bands and low-friction shock absorbers.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right: Diagnostic Goals -->
+          <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="text-base font-bold text-teal-300 mb-3 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-teal-400"></span>
+                Key Roles of Medical Imaging
+              </h4>
+              <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                Diagnostic imaging bridges physical symptoms and definitive pathology, empowering clinicians to:
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800">
+                  <span class="font-bold text-white block mb-1">⚡ Fracture & Trauma</span>
+                  <p class="text-slate-400">Identify acute fractures, occult fissures, and joint dislocations.</p>
+                </div>
+                <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800">
+                  <span class="font-bold text-white block mb-1">🦠 Infections</span>
+                  <p class="text-slate-400">Diagnose osteomyelitis, septic arthritis, and abscess collections.</p>
+                </div>
+                <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800">
+                  <span class="font-bold text-white block mb-1">🔬 Neoplasms & Tumors</span>
+                  <p class="text-slate-400">Differentiate benign vs malignant bone and soft-tissue masses.</p>
+                </div>
+                <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800">
+                  <span class="font-bold text-white block mb-1">🩹 Arthropathies</span>
+                  <p class="text-slate-400">Monitor osteoarthritis, inflammatory synovitis, and cartilage loss.</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 p-3 bg-cyan-950/40 border border-cyan-800/50 rounded-lg text-xs text-cyan-200">
+              💡 <strong>Core Principle:</strong> No single modality answers every clinical question; each modality possesses distinct physical capabilities and radiation considerations.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 3: X-RAY ================= -->
+      <section id="slide-3" class="slide-inactive flex-col justify-between h-full">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+          <div>
+            <span class="text-xs font-bold tracking-wider uppercase text-cyan-400">MODALITY 01 • FIRST-LINE ASSESSMENT</span>
+            <h3 class="text-2xl font-bold text-white">2. X-ray Imaging (Conventional Radiography)</h3>
+          </div>
+          <span class="px-3 py-1 bg-amber-950/80 text-amber-300 border border-amber-800 rounded-full text-xs font-semibold">⚡ Ionizing Radiation (Low Dose)</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 flex-1">
+          <!-- Image Column -->
+          <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-center">
+            <img src="./images/xray.jpg" alt="X-ray Hand and Knee" class="max-h-[360px] w-auto object-contain rounded-lg border border-slate-800">
+            <span class="text-xs text-slate-400 mt-2 italic text-center">Hand and Knee Radiographs: Cortical Bone Detail & Joint Spaces</span>
+          </div>
+
+          <!-- Content Column -->
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-3">
+            <div class="bg-slate-950/70 border border-slate-800 rounded-xl p-4">
+              <h4 class="text-sm font-bold text-cyan-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                <span>🎯</span> Primary Clinical Uses
+              </h4>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-200">
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Detecting acute bone fractures
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Diagnosing joint dislocations
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Detecting skeletal deformities
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Diagnosing arthritis & joint narrowing
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80 col-span-1 sm:col-span-2">
+                  <span class="text-cyan-400">▸</span> Monitoring bone callus healing & orthopedic hardware after surgery
+                </li>
+              </ul>
+            </div>
+
+            <!-- Pros & Cons Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="bg-emerald-950/30 border border-emerald-800/50 rounded-xl p-3.5">
+                <h5 class="text-xs font-bold text-emerald-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                  <span>✓</span> Advantages
+                </h5>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li>• Fast acquisition and universally available</li>
+                  <li>• Inexpensive and highly accessible</li>
+                  <li>• Provides sharp, high-contrast bone detail</li>
+                </ul>
+              </div>
+
+              <div class="bg-rose-950/30 border border-rose-800/50 rounded-xl p-3.5">
+                <h5 class="text-xs font-bold text-rose-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                  <span>✕</span> Disadvantages
+                </h5>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li>• Employs ionizing radiation</li>
+                  <li>• Cannot evaluate soft tissues or ligaments</li>
+                  <li>• May miss occult, stress, or hairline fractures</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 4: CT SCAN ================= -->
+      <section id="slide-4" class="slide-inactive flex-col justify-between h-full">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+          <div>
+            <span class="text-xs font-bold tracking-wider uppercase text-cyan-400">MODALITY 02 • MULTI-SLICE CROSS-SECTIONS</span>
+            <h3 class="text-2xl font-bold text-white">3. Computed Tomography (CT Scan)</h3>
+          </div>
+          <span class="px-3 py-1 bg-amber-950/80 text-amber-300 border border-amber-800 rounded-full text-xs font-semibold">⚡ Ionizing Radiation (Moderate to High)</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 flex-1">
+          <!-- Image Column -->
+          <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-center">
+            <img src="./images/ct.jpg" alt="CT Knee Scan" class="max-h-[360px] w-auto object-contain rounded-lg border border-slate-800">
+            <span class="text-xs text-slate-400 mt-2 italic text-center">Axial CT Scan of Knee Joint: Patellar Articulation & Cortical Architecture</span>
+          </div>
+
+          <!-- Content Column -->
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-3">
+            <div class="bg-slate-950/70 border border-slate-800 rounded-xl p-4">
+              <h4 class="text-sm font-bold text-cyan-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                <span>🎯</span> Primary Clinical Uses
+              </h4>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-200">
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Detecting complex & comminuted fractures
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Examining spine, pelvis & calcaneus trauma
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Characterizing benign & malignant bone tumors
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Preoperative planning & implant sizing
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80 col-span-1 sm:col-span-2">
+                  <span class="text-cyan-400">▸</span> Detecting loose intra-articular bodies & subtle cortical disruptions
+                </li>
+              </ul>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="bg-emerald-950/30 border border-emerald-800/50 rounded-xl p-3.5">
+                <h5 class="text-xs font-bold text-emerald-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                  <span>✓</span> Advantages
+                </h5>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li>• Exceptional sub-millimeter bone spatial detail</li>
+                  <li>• Produces 3D multiplanar reconstructions (MPR)</li>
+                  <li>• Invaluable for operative orthopedic planning</li>
+                </ul>
+              </div>
+
+              <div class="bg-rose-950/30 border border-rose-800/50 rounded-xl p-3.5">
+                <h5 class="text-xs font-bold text-rose-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                  <span>✕</span> Disadvantages
+                </h5>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li>• Higher radiation dose than standard X-rays</li>
+                  <li>• Significantly higher cost</li>
+                  <li>• Soft tissue contrast remains inferior to MRI</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 5: MRI ================= -->
+      <section id="slide-5" class="slide-inactive flex-col justify-between h-full">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+          <div>
+            <span class="text-xs font-bold tracking-wider uppercase text-cyan-400">MODALITY 03 • SOFT TISSUE GOLD STANDARD</span>
+            <h3 class="text-2xl font-bold text-white">4. Magnetic Resonance Imaging (MRI)</h3>
+          </div>
+          <span class="px-3 py-1 bg-emerald-950/80 text-emerald-300 border border-emerald-800 rounded-full text-xs font-semibold">✦ Non-Ionizing (Magnetic & RF)</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 flex-1">
+          <!-- Image Column -->
+          <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-center">
+            <img src="./images/mri.jpg" alt="MRI Knee Scan" class="max-h-[360px] w-auto object-contain rounded-lg border border-slate-800">
+            <span class="text-xs text-slate-400 mt-2 italic text-center">Sagittal Knee MRI: Demonstrating ACL, PCL, Patella, Tibia & Femur</span>
+          </div>
+
+          <!-- Content Column -->
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-3">
+            <div class="bg-slate-950/70 border border-slate-800 rounded-xl p-4">
+              <h4 class="text-sm font-bold text-cyan-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                <span>🎯</span> Primary Clinical Uses
+              </h4>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-200">
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Ligament tears (ACL, PCL, collateral)
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Tendon ruptures (Rotator cuff, Achilles)
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Articular cartilage & meniscal lesions
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Spinal disc herniations & cord compression
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80 col-span-1 sm:col-span-2">
+                  <span class="text-cyan-400">▸</span> Bone marrow edema, osteonecrosis & occult stress injuries
+                </li>
+              </ul>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="bg-emerald-950/30 border border-emerald-800/50 rounded-xl p-3.5">
+                <h5 class="text-xs font-bold text-emerald-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                  <span>✓</span> Advantages
+                </h5>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li>• Unrivaled soft tissue contrast and anatomical resolution</li>
+                  <li>• Completely free from ionizing radiation</li>
+                  <li>• Multi-sequence tissue characterization (T1, T2, STIR)</li>
+                </ul>
+              </div>
+
+              <div class="bg-rose-950/30 border border-rose-800/50 rounded-xl p-3.5">
+                <h5 class="text-xs font-bold text-rose-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                  <span>✕</span> Disadvantages
+                </h5>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li>• High cost and lengthy examination time (20–40 min)</li>
+                  <li>• Highly sensitive to patient motion artifacts</li>
+                  <li>• Incompatible with specific metal implants/pacemakers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 6: ULTRASOUND ================= -->
+      <section id="slide-6" class="slide-inactive flex-col justify-between h-full">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+          <div>
+            <span class="text-xs font-bold tracking-wider uppercase text-cyan-400">MODALITY 04 • DYNAMIC REAL-TIME SONOGRAPHY</span>
+            <h3 class="text-2xl font-bold text-white">5. Ultrasound Imaging</h3>
+          </div>
+          <span class="px-3 py-1 bg-emerald-950/80 text-emerald-300 border border-emerald-800 rounded-full text-xs font-semibold">✦ Non-Ionizing (High-Frequency Sound)</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 flex-1">
+          <!-- Image Column -->
+          <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-center">
+            <img src="./images/ultrasound.jpg" alt="Ultrasound Shoulder Examination" class="max-h-[360px] w-auto object-contain rounded-lg border border-slate-800">
+            <span class="text-xs text-slate-400 mt-2 italic text-center">Shoulder Examination: Dynamic Evaluation of Rotator Cuff and Soft Tissues</span>
+          </div>
+
+          <!-- Content Column -->
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-3">
+            <div class="bg-slate-950/70 border border-slate-800 rounded-xl p-4">
+              <h4 class="text-sm font-bold text-cyan-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                <span>🎯</span> Primary Clinical Uses
+              </h4>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-200">
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Examining muscle tears & hematomas
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Diagnosing tendon ruptures & tendinosis
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Detecting synovitis, bursitis & effusions
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Localizing cysts and foreign bodies
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80 col-span-1 sm:col-span-2">
+                  <span class="text-cyan-400">▸</span> Real-time needle guidance for joint injections & fluid aspiration
+                </li>
+              </ul>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="bg-emerald-950/30 border border-emerald-800/50 rounded-xl p-3.5">
+                <h5 class="text-xs font-bold text-emerald-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                  <span>✓</span> Advantages
+                </h5>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li>• Completely safe, non-invasive, no radiation</li>
+                  <li>• Unique dynamic real-time joint movement imaging</li>
+                  <li>• Readily portable (point-of-care) and cost-effective</li>
+                </ul>
+              </div>
+
+              <div class="bg-rose-950/30 border border-rose-800/50 rounded-xl p-3.5">
+                <h5 class="text-xs font-bold text-rose-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                  <span>✕</span> Disadvantages
+                </h5>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li>• Heavily operator-dependent on examiner technique</li>
+                  <li>• Cannot evaluate bones beyond their superficial cortex</li>
+                  <li>• Limited acoustic penetration in deep tissues</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 7: BONE SCINTIGRAPHY ================= -->
+      <section id="slide-7" class="slide-inactive flex-col justify-between h-full">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+          <div>
+            <span class="text-xs font-bold tracking-wider uppercase text-cyan-400">MODALITY 05 • FUNCTIONAL METABOLIC SURVEY</span>
+            <h3 class="text-2xl font-bold text-white">6. Bone Scintigraphy (Nuclear Medicine)</h3>
+          </div>
+          <span class="px-3 py-1 bg-amber-950/80 text-amber-300 border border-amber-800 rounded-full text-xs font-semibold">⚡ Ionizing Radiation (Gamma Tracer)</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 flex-1">
+          <!-- Image Column -->
+          <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-center">
+            <img src="./images/bone_scan.jpg" alt="Bone Scintigraphy Scan" class="max-h-[360px] w-auto object-contain rounded-lg border border-slate-800">
+            <span class="text-xs text-slate-400 mt-2 italic text-center">Whole-Body 99mTc-DPD Bone Scan: Anterior and Posterior Skeletal Surveys</span>
+          </div>
+
+          <!-- Content Column -->
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-3">
+            <div class="bg-slate-950/70 border border-slate-800 rounded-xl p-4">
+              <h4 class="text-sm font-bold text-cyan-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                <span>🎯</span> Primary Clinical Uses
+              </h4>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-200">
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Detecting skeletal metastases (prostate, breast)
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Identifying acute osteomyelitis & infections
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Detecting occult stress fractures & shin splints
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Investigating unexplained bone pain
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80 col-span-1 sm:col-span-2">
+                  <span class="text-cyan-400">▸</span> Evaluating metabolic skeletal disorders (Paget's disease)
+                </li>
+              </ul>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="bg-emerald-950/30 border border-emerald-800/50 rounded-xl p-3.5">
+                <h5 class="text-xs font-bold text-emerald-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                  <span>✓</span> Advantages
+                </h5>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li>• Surveys the entire skeleton in a single scan</li>
+                  <li>• High functional sensitivity for bone turnover</li>
+                  <li>• Detects lesions weeks before changes appear on X-rays</li>
+                </ul>
+              </div>
+
+              <div class="bg-rose-950/30 border border-rose-800/50 rounded-xl p-3.5">
+                <h5 class="text-xs font-bold text-rose-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                  <span>✕</span> Disadvantages
+                </h5>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li>• Involves administration of radioactive tracers</li>
+                  <li>• Low anatomical detail compared to CT/MRI</li>
+                  <li>• "Hot spots" lack specificity without correlation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 8: FLUOROSCOPY ================= -->
+      <section id="slide-8" class="slide-inactive flex-col justify-between h-full">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+          <div>
+            <span class="text-xs font-bold tracking-wider uppercase text-cyan-400">MODALITY 06 • INTERVENTIONAL & SURGICAL GUIDANCE</span>
+            <h3 class="text-2xl font-bold text-white">7. Fluoroscopy</h3>
+          </div>
+          <span class="px-3 py-1 bg-amber-950/80 text-amber-300 border border-amber-800 rounded-full text-xs font-semibold">⚡ Ionizing Radiation (Pulsed / Continuous)</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 flex-1">
+          <!-- Image Column -->
+          <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-center">
+            <img src="./images/fluoroscopy.jpg" alt="Fluoroscopy in OR" class="max-h-[360px] w-auto object-contain rounded-lg border border-slate-800">
+            <span class="text-xs text-slate-400 mt-2 italic text-center">Intraoperative C-arm Fluoroscopy: Live Surgical Guidance</span>
+          </div>
+
+          <!-- Content Column -->
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-3">
+            <div class="bg-slate-950/70 border border-slate-800 rounded-xl p-4">
+              <h4 class="text-sm font-bold text-cyan-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                <span>🎯</span> Primary Clinical Uses
+              </h4>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-200">
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Guiding fracture reduction & fixation in OR
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Dynamic joint kinematic examination
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Needle guidance for arthrograms & spinal blocks
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Confirming bone alignment during casting
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80 col-span-1 sm:col-span-2">
+                  <span class="text-cyan-400">▸</span> Assisting minimally invasive percutaneous instrumentation
+                </li>
+              </ul>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="bg-emerald-950/30 border border-emerald-800/50 rounded-xl p-3.5">
+                <h5 class="text-xs font-bold text-emerald-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                  <span>✓</span> Advantages
+                </h5>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li>• Continuous real-time video feedback</li>
+                  <li>• Optimizes surgical accuracy and hardware placement</li>
+                  <li>• Indispensable for minimally invasive procedures</li>
+                </ul>
+              </div>
+
+              <div class="bg-rose-950/30 border border-rose-800/50 rounded-xl p-3.5">
+                <h5 class="text-xs font-bold text-rose-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                  <span>✕</span> Disadvantages
+                </h5>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li>• Continuous ionizing radiation to patient & staff</li>
+                  <li>• Requires dedicated lead shielding equipment</li>
+                  <li>• Cumulative radiation risk during prolonged surgery</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 9: DEXA SCAN ================= -->
+      <section id="slide-9" class="slide-inactive flex-col justify-between h-full">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+          <div>
+            <span class="text-xs font-bold tracking-wider uppercase text-cyan-400">MODALITY 07 • QUANTITATIVE BONE DENSITOMETRY</span>
+            <h3 class="text-2xl font-bold text-white">8. Dual-Energy X-ray Absorptiometry (DEXA)</h3>
+          </div>
+          <span class="px-3 py-1 bg-teal-950/80 text-teal-300 border border-teal-800 rounded-full text-xs font-semibold">⚡ Low-Dose Ionizing (Minimal)</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 flex-1">
+          <!-- Image Column -->
+          <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-center">
+            <img src="./images/dexa.jpg" alt="DEXA Bone Density Scan" class="max-h-[360px] w-auto object-contain rounded-lg border border-slate-800">
+            <span class="text-xs text-slate-400 mt-2 italic text-center">Patient Positioned for DEXA Bone Mineral Density (BMD) Evaluation</span>
+          </div>
+
+          <!-- Content Column -->
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-3">
+            <div class="bg-slate-950/70 border border-slate-800 rounded-xl p-4">
+              <h4 class="text-sm font-bold text-cyan-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                <span>🎯</span> Primary Clinical Uses
+              </h4>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-200">
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Diagnosing osteopenia & osteoporosis
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Precise Bone Mineral Density (BMD) scoring
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Calculating 10-year fracture risk (FRAX)
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80">
+                  <span class="text-cyan-400">▸</span> Monitoring anti-osteoporotic therapy response
+                </li>
+                <li class="flex items-center gap-1.5 bg-slate-900/60 p-2 rounded border border-slate-800/80 col-span-1 sm:col-span-2">
+                  <span class="text-cyan-400">▸</span> Screening patients on long-term corticosteroid therapy
+                </li>
+              </ul>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="bg-emerald-950/30 border border-emerald-800/50 rounded-xl p-3.5">
+                <h5 class="text-xs font-bold text-emerald-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                  <span>✓</span> Advantages
+                </h5>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li>• Very low radiation dose (~1/10th of a chest X-ray)</li>
+                  <li>• Quick, painless, comfortable, and non-invasive</li>
+                  <li>• Highly reproducible, quantitative T-scores</li>
+                </ul>
+              </div>
+
+              <div class="bg-rose-950/30 border border-rose-800/50 rounded-xl p-3.5">
+                <h5 class="text-xs font-bold text-rose-300 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                  <span>✕</span> Disadvantages
+                </h5>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li>• Limited purely to bone mineral density metrics</li>
+                  <li>• Does not evaluate soft tissues or acute fractures</li>
+                  <li>• Severe osteoarthritis may falsely inflate density</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 10: COMPARISON TABLE ================= -->
+      <section id="slide-10" class="slide-inactive flex-col justify-between h-full">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+          <div>
+            <span class="text-xs font-bold tracking-wider uppercase text-cyan-400">MODALITY COMPARISON • CLINICAL MATRIX</span>
+            <h3 class="text-2xl font-bold text-white">9. Comparison Between Radiological Methods</h3>
+          </div>
+          <span class="px-3 py-1 bg-cyan-950/80 text-cyan-300 border border-cyan-800 rounded-full text-xs font-semibold">Diagnostic Summary</span>
+        </div>
+
+        <div class="overflow-x-auto flex-1 flex flex-col justify-center">
+          <table class="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr class="bg-slate-950 text-cyan-400 border-b border-slate-700">
+                <th class="py-3 px-3 font-bold">Imaging Method</th>
+                <th class="py-3 px-3 font-bold">Primary Target / Best For</th>
+                <th class="py-3 px-3 font-bold text-center">Radiation</th>
+                <th class="py-3 px-3 font-bold text-center">Bone Detail</th>
+                <th class="py-3 px-3 font-bold text-center">Soft Tissue</th>
+                <th class="py-3 px-3 font-bold text-center">Cost</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/80 text-slate-200">
+              <tr class="hover:bg-slate-800/40 transition">
+                <td class="py-2.5 px-3 font-bold text-white">X-ray (Radiography)</td>
+                <td class="py-2.5 px-3 text-slate-300">Cortical bone, fractures, dislocations</td>
+                <td class="py-2.5 px-3 text-center"><span class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 text-xs font-semibold">Yes (Low)</span></td>
+                <td class="py-2.5 px-3 text-center text-cyan-300 font-semibold">High</td>
+                <td class="py-2.5 px-3 text-center text-slate-400">Poor</td>
+                <td class="py-2.5 px-3 text-center font-mono text-emerald-400">$</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40 transition">
+                <td class="py-2.5 px-3 font-bold text-white">CT Scan</td>
+                <td class="py-2.5 px-3 text-slate-300">Complex bone trauma, 3D spine/pelvis</td>
+                <td class="py-2.5 px-3 text-center"><span class="px-2 py-0.5 rounded bg-rose-950 text-rose-300 text-xs font-semibold">Yes (Mod-High)</span></td>
+                <td class="py-2.5 px-3 text-center text-cyan-300 font-semibold">Very High</td>
+                <td class="py-2.5 px-3 text-center text-slate-300">Moderate</td>
+                <td class="py-2.5 px-3 text-center font-mono text-amber-400">$$$</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40 transition">
+                <td class="py-2.5 px-3 font-bold text-white">MRI</td>
+                <td class="py-2.5 px-3 text-slate-300">Ligaments, tendons, cartilage, marrow</td>
+                <td class="py-2.5 px-3 text-center"><span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 text-xs font-semibold">No (Safe)</span></td>
+                <td class="py-2.5 px-3 text-center text-slate-300">Moderate</td>
+                <td class="py-2.5 px-3 text-center text-emerald-400 font-bold">Gold Standard</td>
+                <td class="py-2.5 px-3 text-center font-mono text-rose-400">$$$$</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40 transition">
+                <td class="py-2.5 px-3 font-bold text-white">Ultrasound</td>
+                <td class="py-2.5 px-3 text-slate-300">Tendons, superficial muscles, guidance</td>
+                <td class="py-2.5 px-3 text-center"><span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 text-xs font-semibold">No (Safe)</span></td>
+                <td class="py-2.5 px-3 text-center text-slate-400">Cortex Only</td>
+                <td class="py-2.5 px-3 text-center text-teal-300 font-semibold">High (Superficial)</td>
+                <td class="py-2.5 px-3 text-center font-mono text-emerald-400">$$</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40 transition">
+                <td class="py-2.5 px-3 font-bold text-white">Bone Scintigraphy</td>
+                <td class="py-2.5 px-3 text-slate-300">Metabolic activity, metastases, infection</td>
+                <td class="py-2.5 px-3 text-center"><span class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 text-xs font-semibold">Yes (Tracer)</span></td>
+                <td class="py-2.5 px-3 text-center text-slate-400">Low Detail</td>
+                <td class="py-2.5 px-3 text-center text-slate-500">None</td>
+                <td class="py-2.5 px-3 text-center font-mono text-amber-400">$$$</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40 transition">
+                <td class="py-2.5 px-3 font-bold text-white">Fluoroscopy</td>
+                <td class="py-2.5 px-3 text-slate-300">Live surgical guidance, dynamic motion</td>
+                <td class="py-2.5 px-3 text-center"><span class="px-2 py-0.5 rounded bg-rose-950 text-rose-300 text-xs font-semibold">Yes (Pulsed)</span></td>
+                <td class="py-2.5 px-3 text-center text-slate-300">Moderate</td>
+                <td class="py-2.5 px-3 text-center text-slate-400">Poor</td>
+                <td class="py-2.5 px-3 text-center font-mono text-amber-400">$$$</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40 transition">
+                <td class="py-2.5 px-3 font-bold text-white">DEXA Scan</td>
+                <td class="py-2.5 px-3 text-slate-300">Bone mineral density (BMD), osteoporosis</td>
+                <td class="py-2.5 px-3 text-center"><span class="px-2 py-0.5 rounded bg-teal-950 text-teal-300 text-xs font-semibold">Yes (Minimal)</span></td>
+                <td class="py-2.5 px-3 text-center text-slate-400">Density Only</td>
+                <td class="py-2.5 px-3 text-center text-slate-500">None</td>
+                <td class="py-2.5 px-3 text-center font-mono text-emerald-400">$</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 11: SAFETY ================= -->
+      <section id="slide-11" class="slide-inactive flex-col justify-between h-full">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+          <div>
+            <span class="text-xs font-bold tracking-wider uppercase text-cyan-400">RADIATION PROTECTION • CLINICAL STANDARDS</span>
+            <h3 class="text-2xl font-bold text-white">10. Safety Precautions During Examinations</h3>
+          </div>
+          <span class="px-3 py-1 bg-amber-950/80 text-amber-300 border border-amber-800 rounded-full text-xs font-semibold">Patient Protection</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
+          <div class="bg-slate-950/80 border border-slate-800 p-4 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-7 h-7 rounded-lg bg-cyan-950 border border-cyan-800 text-cyan-400 flex items-center justify-center font-bold text-xs">1</span>
+              <h4 class="text-sm font-bold text-white">The ALARA Principle</h4>
+            </div>
+            <p class="text-xs text-slate-300 mb-2 font-medium">As Low As Reasonably Achievable</p>
+            <ul class="text-xs text-slate-400 space-y-1.5 list-disc pl-4">
+              <li>Optimize tube potential (kVp) and current (mAs) per body habitus.</li>
+              <li>Employ tight beam collimation to restrict scatter radiation.</li>
+              <li>Eliminate duplicate exposures and prioritize non-ionizing alternatives.</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-950/80 border border-slate-800 p-4 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-7 h-7 rounded-lg bg-teal-950 border border-teal-800 text-teal-400 flex items-center justify-center font-bold text-xs">2</span>
+              <h4 class="text-sm font-bold text-white">Patient Screening & Pregnancy</h4>
+            </div>
+            <p class="text-xs text-slate-300 mb-2 font-medium">Clinical History Verification</p>
+            <ul class="text-xs text-slate-400 space-y-1.5 list-disc pl-4">
+              <li>Always screen female patients of reproductive age for pregnancy.</li>
+              <li>Verify renal function (eGFR) prior to intravenous iodinated/gadolinium contrast.</li>
+              <li>Review allergies, previous adverse reactions, and asthma history.</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-950/80 border border-slate-800 p-4 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-7 h-7 rounded-lg bg-amber-950 border border-amber-800 text-amber-400 flex items-center justify-center font-bold text-xs">3</span>
+              <h4 class="text-sm font-bold text-white">Personal Protective Equipment (PPE)</h4>
+            </div>
+            <p class="text-xs text-slate-300 mb-2 font-medium">Shielding Protocols</p>
+            <ul class="text-xs text-slate-400 space-y-1.5 list-disc pl-4">
+              <li>Wear lead aprons (0.5mm lead equivalent), thyroid shields, and lead eyewear.</li>
+              <li>Use gonadal and breast shields for young patients when outside the field of view.</li>
+              <li>Deploy mobile lead shielding barriers in fluoroscopy operating suites.</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-950/80 border border-slate-800 p-4 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-7 h-7 rounded-lg bg-emerald-950 border border-emerald-800 text-emerald-400 flex items-center justify-center font-bold text-xs">4</span>
+              <h4 class="text-sm font-bold text-white">Strict MRI Safety Zones</h4>
+            </div>
+            <p class="text-xs text-slate-300 mb-2 font-medium">Ferromagnetic Screening</p>
+            <ul class="text-xs text-slate-400 space-y-1.5 list-disc pl-4">
+              <li>Screen for non-compatible pacemakers, neurostimulators, and cochlear implants.</li>
+              <li>Mandatory removal of all external ferromagnetic items (pens, scissors, pagers).</li>
+              <li>Prevent severe projectile missile hazards in Zone IV magnet rooms.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 12: CLINICAL IMPORTANCE ================= -->
+      <section id="slide-12" class="slide-inactive flex-col justify-between h-full">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+          <div>
+            <span class="text-xs font-bold tracking-wider uppercase text-cyan-400">PATIENT OUTCOMES • HEALTHCARE VALUE</span>
+            <h3 class="text-2xl font-bold text-white">11. Importance in Musculoskeletal Medicine</h3>
+          </div>
+          <span class="px-3 py-1 bg-cyan-950/80 text-cyan-300 border border-cyan-800 rounded-full text-xs font-semibold">Clinical Value</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 flex-1">
+          <div class="bg-slate-950/80 border border-cyan-800/60 p-4 rounded-xl flex flex-col justify-between">
+            <div>
+              <span class="text-2xl mb-2 block">🔍</span>
+              <h4 class="text-sm font-bold text-white mb-1.5">Early Detection</h4>
+              <p class="text-xs text-slate-300 mb-3">Identifies occult fractures, bone infections, and tumors before severe structural collapse occurs.</p>
+            </div>
+            <div class="text-[11px] text-cyan-400 font-semibold bg-cyan-950/60 p-2 rounded border border-cyan-900">
+              Preserves joint anatomy & avoids permanent disability.
+            </div>
+          </div>
+
+          <div class="bg-slate-950/80 border border-teal-800/60 p-4 rounded-xl flex flex-col justify-between">
+            <div>
+              <span class="text-2xl mb-2 block">📐</span>
+              <h4 class="text-sm font-bold text-white mb-1.5">Surgical Planning</h4>
+              <p class="text-xs text-slate-300 mb-3">Multiplanar CT and MRI reconstructions allow orthopedic surgeons to plan precision cuts and implant trajectories.</p>
+            </div>
+            <div class="text-[11px] text-teal-400 font-semibold bg-teal-950/60 p-2 rounded border border-teal-900">
+              Minimizes operative duration & surgical morbidity.
+            </div>
+          </div>
+
+          <div class="bg-slate-950/80 border border-emerald-800/60 p-4 rounded-xl flex flex-col justify-between">
+            <div>
+              <span class="text-2xl mb-2 block">📈</span>
+              <h4 class="text-sm font-bold text-white mb-1.5">Treatment Tracking</h4>
+              <p class="text-xs text-slate-300 mb-3">Validates bony callus formation, joint arthroplasty integration, and response to anti-osteoporotic therapy.</p>
+            </div>
+            <div class="text-[11px] text-emerald-400 font-semibold bg-emerald-950/60 p-2 rounded border border-emerald-900">
+              Guides safe weight-bearing & physical rehabilitation.
+            </div>
+          </div>
+
+          <div class="bg-slate-950/80 border border-sky-800/60 p-4 rounded-xl flex flex-col justify-between">
+            <div>
+              <span class="text-2xl mb-2 block">🏥</span>
+              <h4 class="text-sm font-bold text-white mb-1.5">Holistic Care</h4>
+              <p class="text-xs text-slate-300 mb-3">Enables multidisciplinary coordination between radiologists, orthopedic surgeons, and rheumatologists.</p>
+            </div>
+            <div class="text-[11px] text-sky-400 font-semibold bg-sky-950/60 p-2 rounded border border-sky-900">
+              Optimizes long-term mobility & quality of life.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 13: CONCLUSION ================= -->
+      <section id="slide-13" class="slide-inactive flex-col justify-between h-full">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+          <div>
+            <span class="text-xs font-bold tracking-wider uppercase text-cyan-400">SUMMARY & DECISION ALGORITHM</span>
+            <h3 class="text-2xl font-bold text-white">12. Conclusion & Modality Selection</h3>
+          </div>
+          <span class="px-3 py-1 bg-cyan-950/80 text-cyan-300 border border-cyan-800 rounded-full text-xs font-semibold">Key Takeaways</span>
+        </div>
+
+        <div class="space-y-4 flex-1 flex flex-col justify-center">
+          <div class="bg-slate-950/70 border border-cyan-800/50 p-4 rounded-xl">
+            <h4 class="text-sm font-bold text-cyan-300 mb-2">Core Clinical Takeaway:</h4>
+            <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+              Musculoskeletal radiology represents an integrated arsenal of diagnostic tools. No solitary modality answers all diagnostic inquiries. Optimal patient management relies on matching the clinical question with the appropriate technique—maximizing diagnostic precision while minimizing ionizing exposure and healthcare costs.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+              <span class="text-cyan-400 font-bold block mb-1">🦴 Acute Bone Trauma</span>
+              <p class="text-slate-300">Plain Radiography (X-ray) first. If intra-articular or complex comminution → Order <strong>3D CT Scan</strong>.</p>
+            </div>
+            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+              <span class="text-emerald-400 font-bold block mb-1">🧲 Soft Tissue & Joint Derangement</span>
+              <p class="text-slate-300">Order <strong>MRI</strong> for ligaments & cartilage. Use <strong>Ultrasound</strong> for dynamic superficial tendon tears.</p>
+            </div>
+            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+              <span class="text-amber-400 font-bold block mb-1">☢️ Metastases & Infection</span>
+              <p class="text-slate-300">Perform <strong>Whole-Body Bone Scintigraphy</strong> for functional skeletal survey; correlate with SPECT/CT.</p>
+            </div>
+            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+              <span class="text-teal-400 font-bold block mb-1">📊 Osteoporosis Screening</span>
+              <p class="text-slate-300">Order <strong>DEXA Scan</strong> of lumbar spine and femoral neck to compute quantitative T-score and fracture risk.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 14: REFERENCES ================= -->
+      <section id="slide-14" class="slide-inactive flex-col justify-between h-full">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+          <div>
+            <span class="text-xs font-bold tracking-wider uppercase text-cyan-400">BIBLIOGRAPHY & EVIDENCE BASE</span>
+            <h3 class="text-2xl font-bold text-white">13. Academic References</h3>
+          </div>
+          <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-semibold">Authoritative Sources</span>
+        </div>
+
+        <div class="space-y-2.5 flex-1 overflow-y-auto pr-2 text-xs">
+          <div class="bg-slate-950/80 border border-slate-800/80 p-3 rounded-lg flex items-start justify-between gap-3">
+            <div>
+              <div class="font-bold text-cyan-300">1. RadiologyInfo.org – Bone X-Ray Examination</div>
+              <p class="text-slate-400">Radiological Society of North America (RSNA) & American College of Radiology (ACR).</p>
+            </div>
+            <a href="https://www.radiologyinfo.org/en/info/bonerad" target="_blank" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-cyan-300 rounded font-mono text-[11px] whitespace-nowrap">Open ↗</a>
+          </div>
+
+          <div class="bg-slate-950/80 border border-slate-800/80 p-3 rounded-lg flex items-start justify-between gap-3">
+            <div>
+              <div class="font-bold text-cyan-300">2. RadiologyInfo.org – Musculoskeletal MRI</div>
+              <p class="text-slate-400">Radiological Society of North America (RSNA) & American College of Radiology (ACR).</p>
+            </div>
+            <a href="https://www.radiologyinfo.org/en/info/muscmr" target="_blank" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-cyan-300 rounded font-mono text-[11px] whitespace-nowrap">Open ↗</a>
+          </div>
+
+          <div class="bg-slate-950/80 border border-slate-800/80 p-3 rounded-lg flex items-start justify-between gap-3">
+            <div>
+              <div class="font-bold text-cyan-300">3. University of California Davis Health – Musculoskeletal Radiology</div>
+              <p class="text-slate-400">UC Davis Department of Radiology, Division of Musculoskeletal Imaging.</p>
+            </div>
+            <a href="https://health.ucdavis.edu/diagnosis/musculoskeletal-radiology" target="_blank" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-cyan-300 rounded font-mono text-[11px] whitespace-nowrap">Open ↗</a>
+          </div>
+
+          <div class="bg-slate-950/80 border border-slate-800/80 p-3 rounded-lg flex items-start justify-between gap-3">
+            <div>
+              <div class="font-bold text-cyan-300">4. Centers for Disease Control and Prevention (CDC) – Imaging Procedures</div>
+              <p class="text-slate-400">Radiation Health Studies Branch: Diagnostic Imaging Facts & ALARA Guidelines.</p>
+            </div>
+            <a href="https://www.cdc.gov/radiation-health/data-research/facts-stats/imaging-procedures.html" target="_blank" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-cyan-300 rounded font-mono text-[11px] whitespace-nowrap">Open ↗</a>
+          </div>
+
+          <div class="bg-slate-950/80 border border-slate-800/80 p-3 rounded-lg flex items-start justify-between gap-3">
+            <div>
+              <div class="font-bold text-cyan-300">5. Egyptian Ministry of Health & Population (MOHP) – Radiology Principles</div>
+              <p class="text-slate-400">Diagnostic Principles and Orthopedic Radiology Protocols, Training Sector.</p>
+            </div>
+            <a href="https://www.mohp.gov.eg/theducation/SecondGroup/Bones/Term2/Radiology_and_diagnostic_principles/" target="_blank" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-cyan-300 rounded font-mono text-[11px] whitespace-nowrap">Open ↗</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Bottom Navigation & Slide Controller Bar -->
+  <footer class="w-full max-w-7xl mx-auto flex items-center justify-between bg-slate-900/90 backdrop-blur border border-slate-800 rounded-xl px-4 py-2.5 mt-3 shadow-lg">
+    <div class="flex items-center gap-2">
+      <button id="btn-prev" onclick="prevSlide()" class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-xs transition flex items-center gap-1.5 border border-slate-700 active:scale-95">
+        <span>←</span>
+        <span>Previous</span>
+      </button>
+      <button id="btn-next" onclick="nextSlide()" class="px-4 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs transition flex items-center gap-1.5 shadow-md shadow-cyan-600/30 active:scale-95">
+        <span>Next</span>
+        <span>→</span>
+      </button>
+    </div>
+
+    <!-- Quick Pill Numbers -->
+    <div class="hidden sm:flex items-center gap-1.5 overflow-x-auto px-2" id="pill-container">
+      <!-- Generated via JS -->
+    </div>
+
+    <!-- Keyboard Hint -->
+    <div class="text-xs text-slate-400 hidden lg:block">
+      Use <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-[10px] font-mono text-cyan-400">←</kbd> <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-[10px] font-mono text-cyan-400">→</kbd> or <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-[10px] font-mono text-cyan-400">Space</kbd>
+    </div>
+  </footer>
+
+  <!-- Slide Grid / Overview Drawer Modal -->
+  <div id="grid-modal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 hidden flex-col p-6 overflow-y-auto">
+    <div class="max-w-6xl w-full mx-auto">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
+        <div>
+          <h3 class="text-lg font-bold text-white">Slide Deck Overview (14 Slides)</h3>
+          <p class="text-xs text-slate-400">Click any slide to jump directly</p>
+        </div>
+        <button onclick="toggleGrid()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold">✕ Close</button>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" id="grid-list">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const TOTAL_SLIDES = 14;
+    let currentSlide = 1;
+
+    const slideTitles = [
+      "Title & Overview",
+      "1. Introduction to MSK",
+      "2. X-ray Radiography",
+      "3. CT Scan",
+      "4. MRI",
+      "5. Ultrasound",
+      "6. Bone Scintigraphy",
+      "7. Fluoroscopy",
+      "8. DEXA Scan",
+      "9. Comparison Matrix",
+      "10. Safety Precautions",
+      "11. Clinical Importance",
+      "12. Conclusion & Pathways",
+      "13. Academic References"
+    ];
+
+    function showSlide(num) {
+      if (num < 1) num = 1;
+      if (num > TOTAL_SLIDES) num = TOTAL_SLIDES;
+      currentSlide = num;
+
+      for (let i = 1; i <= TOTAL_SLIDES; i++) {
+        const slideEl = document.getElementById(`slide-${i}`);
+        if (slideEl) {
+          if (i === currentSlide) {
+            slideEl.classList.remove('slide-inactive');
+            slideEl.classList.add('slide-active');
+          } else {
+            slideEl.classList.remove('slide-active');
+            slideEl.classList.add('slide-inactive');
+          }
+        }
+      }
+
+      // Update Header readout & progress bar
+      document.getElementById('slide-readout').textContent = `Slide ${currentSlide} of ${TOTAL_SLIDES}`;
+      const pct = (currentSlide / TOTAL_SLIDES) * 100;
+      document.getElementById('progress-bar').style.width = `${pct}%`;
+
+      // Update Nav Buttons
+      document.getElementById('btn-prev').disabled = currentSlide === 1;
+      document.getElementById('btn-prev').classList.toggle('opacity-50', currentSlide === 1);
+      document.getElementById('btn-next').disabled = currentSlide === TOTAL_SLIDES;
+      document.getElementById('btn-next').classList.toggle('opacity-50', currentSlide === TOTAL_SLIDES);
+
+      // Update Pills
+      renderPills();
+    }
+
+    function nextSlide() {
+      if (currentSlide < TOTAL_SLIDES) showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) showSlide(currentSlide - 1);
+    }
+
+    function renderPills() {
+      const container = document.getElementById('pill-container');
+      container.innerHTML = '';
+      for (let i = 1; i <= TOTAL_SLIDES; i++) {
+        const btn = document.createElement('button');
+        btn.onclick = () => showSlide(i);
+        btn.textContent = i;
+        btn.className = `w-7 h-7 rounded-lg text-xs font-semibold transition ${
+          i === currentSlide 
+            ? 'bg-cyan-500 text-white font-bold shadow-md shadow-cyan-500/30' 
+            : 'bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700'
+        }`;
+        container.appendChild(btn);
+      }
+    }
+
+    function toggleGrid() {
+      const modal = document.getElementById('grid-modal');
+      const isHidden = modal.classList.contains('hidden');
+      if (isHidden) {
+        renderGrid();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      } else {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+      }
+    }
+
+    function renderGrid() {
+      const list = document.getElementById('grid-list');
+      list.innerHTML = '';
+      for (let i = 1; i <= TOTAL_SLIDES; i++) {
+        const item = document.createElement('div');
+        item.onclick = () => { showSlide(i); toggleGrid(); };
+        item.className = `p-3 rounded-xl border cursor-pointer transition flex flex-col justify-between h-28 ${
+          i === currentSlide 
+            ? 'bg-cyan-950/60 border-cyan-400 ring-2 ring-cyan-500/40' 
+            : 'bg-slate-900 border-slate-800 hover:border-slate-700 hover:bg-slate-850'
+        }`;
+        item.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-cyan-400">Slide ${i}</span>
+            ${i === currentSlide ? '<span class="w-2 h-2 rounded-full bg-cyan-400"></span>' : ''}
+          </div>
+          <span class="text-xs font-bold text-white leading-snug line-clamp-2">${slideTitles[i-1]}</span>
+          <span class="text-[10px] text-slate-400">Click to jump →</span>
+        `;
+        list.appendChild(item);
+      }
+    }
+
+    // Keyboard navigation
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'Escape') {
+        const modal = document.getElementById('grid-modal');
+        if (!modal.classList.contains('hidden')) toggleGrid();
+      }
+    });
+
+    // Initial render
+    showSlide(1);
+  </script>
+</body>
+</html>
